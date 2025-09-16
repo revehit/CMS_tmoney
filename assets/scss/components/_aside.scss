@@ -82,7 +82,7 @@
           /* 3Depth */
           > .depth3 {
             display: none; // JS에서 slideDown/Up 처리
-            background: #0e0e0e;
+            background: var(--bg-darken);
             padding: 6px 0 10px;
             border-top: 1px solid rgba(255, 255, 255, .06);
             border-radius: 0 0 5px 5px;
