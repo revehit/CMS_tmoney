@@ -1842,7 +1842,8 @@ input {
   display: flex;
   flex-direction: column;
   background: var(--modal-surface);
-  color: var(--modal-foreground);
+  color: var(--color-darken);
+  border: 1px solid var(--border-darken);
   border-radius: 12px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
   outline: none;
@@ -1864,7 +1865,7 @@ input {
 .modal .modal-header .modal-title {
   font-size: 18px;
   font-weight: 700;
-  color: inherit; /* 전경색 상속 */
+  color: var(--color-darken);
 }
 .modal .modal-header .modal-close {
   width: 32px;
@@ -1874,7 +1875,8 @@ input {
   cursor: pointer;
   border-radius: 8px;
   position: relative;
-  color: var(--modal-foreground); /* 아이콘 색 기준 */
+  color: var(--color-darken);
+  border: 1px solid var(--color-darken);
 }
 .modal .modal-header .modal-close::before, .modal .modal-header .modal-close::after {
   content: "";
@@ -1902,7 +1904,7 @@ input {
 .modal .modal-body {
   padding: 20px;
   overflow: auto;
-  color: inherit;
+  color: inherit; /* ✅ 전경색 상속 */
 }
 .modal .modal-body .table {
   min-width: 100%;
@@ -1958,13 +1960,40 @@ input {
   overflow: hidden;
 }
 
-/* 🌙 다크 테마 전용 오버라이드:
-   - 표면을 밝게, 전경을 어둡게 역전
-   - 오버레이를 조금 더 진하게 */
+/* 🌙 다크 테마 전용 오버라이드 */
+:root {
+  /* 폴백: color-mix 미지원 시 사용될 약간 어두운 표면색 */
+  --modal-surface-dark-fallback: #f2f2f5;
+}
+
+/* 최신 브라우저: color-mix 사용 (OKLab 추천) */
+@supports (color: color-mix(in oklab, white, black)) {
+  :root {
+    --modal-surface-dark: color-mix(in oklab, var(--color-white), black 16%);
+  }
+}
+/* 다크 테마
+   - 표면은 화이트를 16% 블랙으로 톤다운
+   - 전경은 진한 #121212
+   - 오버레이는 조금 더 진하게 */
 [data-theme=dark] .modal {
-  --modal-surface: var(--bg-darken); /* 밝은 면: 다크에서도 확실히 떠 보임 */
-  --modal-foreground: #121212; /* 읽기 좋은 진한 본문색 */
+  --modal-surface: var(--modal-surface-dark, var(--modal-surface-dark-fallback));
+  --modal-foreground: #121212;
   --modal-overlay: rgba(0, 0, 0, .6);
+}
+
+/* 다크 테마 디테일 튜닝: 보더/호버 대비 과하지 않게 */
+[data-theme=dark] .modal .modal-container {
+  border-color: color-mix(in oklab, var(--border-darken), white 28%);
+}
+
+[data-theme=dark] .modal .modal-header,
+[data-theme=dark] .modal .modal-footer {
+  border-color: color-mix(in oklab, var(--gray-500), white 30%);
+}
+
+[data-theme=dark] .modal .modal-header .modal-close:hover {
+  background: color-mix(in oklab, var(--gray-200), black 12%);
 }
 
 .tabs {
