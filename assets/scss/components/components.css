@@ -533,6 +533,9 @@
 .modal .box-wrap .box .flex * {
   min-width: 0;
 }
+.modal .box-wrap .box.col1 {
+  grid-column: span 1;
+}
 .modal .box-wrap .box.col2 {
   grid-column: span 2;
 }
@@ -541,6 +544,9 @@
 }
 .modal .box-wrap .box.col4 {
   grid-column: span 4;
+}
+.modal .box-wrap + .box-wrap {
+  margin-top: 24px;
 }
 
 /* 바디 스크롤 잠금 */
