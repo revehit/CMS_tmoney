@@ -62,6 +62,12 @@
           </ul>
         </li>
         <li class="">
+          <a class="depth1" href="<%=request.getContextPath()%>/tmoney/cms/page/system/index.jsp">
+            <img src="../../assets/images/icon/icon-lnb11.svg">
+            시스템
+          </a>
+        </li>
+        <li class="">
           <a class="depth1" href="">
             <img src="../../assets/images/icon/icon-lnb2.svg">
             지원금 신청

@@ -56,4 +56,20 @@
       background-position: center;
     }
   }
+  &.icon-minus {
+    &:before {
+      background-image: url(../images/icon/icon-minus.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  &.icon-plus {
+    &:before {
+      background-image: url(../images/icon/icon-plus.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
 }
