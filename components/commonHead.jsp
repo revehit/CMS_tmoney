@@ -26,6 +26,7 @@
 
   <script src="../../assets/js/theme.js"></script>
   <script src="../../assets/js/common.js"></script>
+  <script src="../../assets/js/datepicker.js" defer></script>
 </head>
 <body>
   <script>
