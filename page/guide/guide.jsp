@@ -653,6 +653,97 @@
             </td>
           </tr>
           <tr>
+            <th scope="row">datepicker 신규</th>
+            <td>
+              <div class="flex align-center col-2">
+                <div class="text-field datepicker" style="width: 200px">
+                  <label for="startDatenew2" class="sr-only">시작일</label>
+                  <input
+                    id="startDatenew2"
+                    type="text"
+                    class="dp-input"
+                    placeholder="YYYY-MM-DD"
+                    inputmode="numeric"
+                    pattern="\d{4}-\d{2}-\d{2}"
+                    autocomplete="off"
+                    data-role="start"
+                    data-dp-group="booking"
+                    aria-describedby="startDateHelp2"
+                  />
+                  <button
+                    type="button"
+                    class="dp-btn"
+                    data-dp-toggle
+                    aria-label="달력 열기"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    aria-controls="dp-pop"
+                  ></button>
+                  <span id="startDateHelp2" class="sr-only">형식: YYYY-MM-DD. 예: 2025-10-12</span>
+                </div>
+                <span>~</span>
+                <div class="text-field datepicker" style="width: 200px">
+                  <label for="startDatenew3" class="sr-only">시작일</label>
+                  <input
+                    id="startDatenew3"
+                    type="text"
+                    class="dp-input"
+                    placeholder="YYYY-MM-DD"
+                    inputmode="numeric"
+                    pattern="\d{4}-\d{2}-\d{2}"
+                    autocomplete="off"
+                    data-role="start"
+                    data-dp-group="booking"
+                    aria-describedby="startDateHelp3"
+                  />
+                  <button
+                    type="button"
+                    class="dp-btn"
+                    data-dp-toggle
+                    aria-label="달력 열기"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    aria-controls="dp-pop"
+                  ></button>
+                  <span id="startDateHelp3" class="sr-only">형식: YYYY-MM-DD. 예: 2025-10-12</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">사업종료일</th>
+            <td>
+              <div class="flex align-center col-2">
+              <div class="text-field datepicker" style="width: 200px">
+                <label for="startDatenew" class="sr-only">시작일</label>
+                <input
+                  id="startDatenew"
+                  type="text"
+                  class="dp-input"
+                  placeholder="YYYY-MM-DD"
+                  inputmode="numeric"
+                  pattern="\d{4}-\d{2}-\d{2}"
+                  autocomplete="off"
+                  data-role="start"
+                  data-dp-group="booking"
+                  aria-describedby="startDateHelp"
+                />
+                <button
+                  type="button"
+                  class="dp-btn"
+                  data-dp-toggle
+                  aria-label="달력 열기"
+                  aria-haspopup="dialog"
+                  aria-expanded="false"
+                  aria-controls="dp-pop"
+                ></button>
+                <span id="startDateHelp" class="sr-only">형식: YYYY-MM-DD. 예: 2025-10-12</span>
+              </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
             <th scope="row">사업시작일</th>
             <td>
               <div class="date-field" style="width: 200px">
