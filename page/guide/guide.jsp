@@ -731,6 +731,16 @@
             </td>
           </tr>
           <tr>
+            <th scope="row">datepicker 년월</th>
+            <td>
+              <div class="text-field datepicker" style="width: 200px">
+                <input id="pick-month2" type="text" class="dp-input" placeholder="YYYY-MM"
+                      data-dp-type="month" autocomplete="off" />
+                <button type="button" class="dp-btn" data-dp-toggle aria-label="년 월 선택 열기"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
             <th scope="row">사업시작일</th>
             <td>
               <div class="date-field" style="width: 200px">
